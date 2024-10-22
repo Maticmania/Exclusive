@@ -5,34 +5,46 @@ import Image from "next/image";
 import googleIcon from "@/assets/icons/icon-google.svg";
 import authImage from "@/assets/images/authImage.svg";
 import Link from "next/link";
+import { BiError } from "react-icons/bi";
 
 const Page = () => {
-  const { register, handleSubmit, formState: { errors }, watch } = useForm();
+  const { register, handleSubmit, formState: { errors }, watch, reset } = useForm();
   const [showPassword, setShowPassword] = useState(false);
   const [passwordStrength, setPasswordStrength] = useState("");
 
   const onSubmit = (data) => {
     console.log("Form submitted:", data);
+    reset()
   };
 
   // Get password value from form state
   const password = watch("password");
 
   useEffect(() => {
-    if (password) {
-      // Password strength checker
-      if (password.length < 6) {
-        setPasswordStrength("weak");
-      } else if (password.length >= 6 && password.length < 10) {
-        setPasswordStrength("medium");
-      } else if (password.length >= 10) {
+    if (password && password.length >= 6) {
+      // Check if the password contains uppercase, lowercase, number, and symbol
+      const hasUppercase = /[A-Z]/.test(password);
+      const hasLowercase = /[a-z]/.test(password);
+      const hasNumber = /\d/.test(password);
+      const hasSymbol = /[!@#$%^&*(),.?":{}|<>]/.test(password);
+  
+      if (hasUppercase && hasLowercase && hasNumber && hasSymbol) {
         setPasswordStrength("strong");
+      } else if (
+        (hasUppercase && hasLowercase) ||
+        (hasUppercase && hasNumber) ||
+        (hasLowercase && hasNumber)
+      ) {
+        setPasswordStrength("medium");
+      } else {
+        setPasswordStrength("weak");
       }
     } else {
-      setPasswordStrength("");
+      setPasswordStrength("");  // Reset if password is less than 6 characters
     }
-  }, [password]); // Runs whenever the password value changes
-
+  }, [password]);
+  
+  
   return (
     <div className="w-full h-full flex flex-col lg:flex-row lg:min-h-[700px] cursor-grab">
       {/* left image */}
@@ -46,7 +58,7 @@ const Page = () => {
       {/* right content */}
       <div className="w-full lg:w-1/2 h-full lg:px-10 lg:min-h-[700px] flex justify-center py-6">
         <div className="lg:max-w-[371px] w-full px-[5%] lg:px-0 flex flex-col justify-center gap-10">
-          <div className="w-full">
+          <div className="w-full text-center lg:text-left">
             <h1 className="font-inter font-medium text-2xl sm:text-3xl lg:text-4xl text-black">
               Create an account
             </h1>
@@ -62,7 +74,7 @@ const Page = () => {
                 className="border-b py-2 border-black w-full font-poppins focus:outline-none focus:border-b-hover focus:border-b-2"
                 {...register("name", { required: "Name is required" })}
               />
-              {errors.name && <span className="text-red-500 text-sm">{errors.name.message}</span>}
+              {errors.name && <span className="text-red-500 text-sm flex items-center "><BiError/>{errors.name.message}</span>}
             </label>
             <label>
               <input
@@ -77,13 +89,14 @@ const Page = () => {
                   },
                 })}
               />
-              {errors.email && <span className="text-red-500 text-sm">{errors.email.message}</span>}
+              {errors.email && <span className="text-red-500 text-sm flex items-center "><BiError/>{errors.email.message}</span>}
             </label>
             <label className="relative">
               <input
                 type={showPassword ? "text" : "password"}
                 placeholder="Password"
                 className="border-b py-2 border-black w-full font-poppins focus:outline-none focus:border-b-hover focus:border-b-2"
+                maxLength= '16'
                 {...register("password", {
                   required: "Password is required",
                   minLength: { value: 6, message: "Password must be at least 6 characters long" },
@@ -96,10 +109,10 @@ const Page = () => {
               >
                 {showPassword ? "hide" : "show"}
               </span>
-              {errors.password && <span className="text-red-500 text-sm">{errors.password.message}</span>}
+              {errors.password && <span className="text-red-500 text-sm flex items-center "><BiError/> {errors.password.message}</span>}
 
               {/* Password strength indicator */}
-              {password && (
+              {passwordStrength && (
                 <div className="flex items-center mt-2 gap-1">
                   <span
                     className={`p-2 px-6 rounded ${
@@ -110,7 +123,9 @@ const Page = () => {
                         : "bg-red-500"
                     }`}
                   ></span>
+                  {passwordStrength && 
                   <span className="text-sm text-black">{passwordStrength} password</span>
+                  }
                 </div>
               )}
             </label>
