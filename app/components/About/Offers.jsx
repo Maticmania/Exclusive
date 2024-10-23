@@ -1,5 +1,5 @@
 import { offers } from "@/app/db/page";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 const Offers = () => {
   return (

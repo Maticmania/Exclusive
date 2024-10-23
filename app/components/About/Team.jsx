@@ -1,4 +1,4 @@
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { team } from "@/app/db/page"
 import { CiTwitter } from "react-icons/ci"
 import { IoLogoInstagram } from "react-icons/io"
