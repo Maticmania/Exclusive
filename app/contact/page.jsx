@@ -1,18 +1,33 @@
+"use client"
+
+import { useForm } from "react-hook-form";
 import Image from "next/image";
 import phoneIcon from "@/assets/icons/icons-phone.svg";
 import mailIcon from "@/assets/icons/icons-mail.svg";
 import { contact } from "../db/page";
-const page = () => {
+
+const Page = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
+  const onSubmit = (data) => {
+    console.log("Form Data:", data);
+  };
+
   return (
-    <div className="w-full px-[5%] min-h-screen">
-      <p className="poppins">Home / Contact</p>
+    <div className="w-full px-[5%] grid gap-8">
+      <p className="font-poppins pt-10">Home / Contact</p>
+
       <div className="flex flex-col md:flex-row w-full gap-5 h-full md:max-h-[457px]">
         {contact.map((contact, i) => (
           <div
-            className="w-full lg:w-[30%] md:w-[40%] p-[5%] md:p-[3%] rounded shadow-custom-light flex flex-col  gap-4 md:gap-8  "
+            className="w-full lg:w-[30%] md:w-[40%] p-[5%] md:p-[3%] rounded shadow-custom-light flex flex-col gap-4 md:gap-8"
             key={i}
           >
-            <div className="font-poppins grid gap-4 text-center md:text-left ">
+            <div className="font-poppins grid gap-4 text-center md:text-left">
               <div className="flex items-center gap-3 w-full justify-center md:justify-start">
                 <Image src={phoneIcon} alt="phone" />
                 <span className="font-medium font-poppins">Call To us</span>
@@ -23,7 +38,7 @@ const page = () => {
               <p className="text-[12px] sm:text-sm">Phone {contact.phone}</p>
             </div>
             <span className="bg-gray-400 w-full h-[1px]"></span>
-            <div className="grid gap-4 text-center md:text-left">
+            <div className="grid gap-4 text-center md:text-left font-poppins">
               <div className="flex items-center gap-3 w-full justify-center md:justify-start">
                 <Image src={mailIcon} alt="mail" />
                 <span className="font-medium font-poppins">Write To Us</span>
@@ -36,38 +51,71 @@ const page = () => {
             </div>
           </div>
         ))}
+
         <div className="w-full md:w-[70%] shadow-custom-light p-[3%] rounded">
-          <form className="grid gap-8">
+          <form onSubmit={handleSubmit(onSubmit)} className="grid gap-8">
             <div className="grid gap-4 grid-cols-2 lg:grid-cols-3">
-              <input
-                type="text"
-                className="rounded bg-input font-poppins p-2 text-black text-sm outline-none col-span-1"
-                name="Name"
-                placeholder="Your Name *"
-              />
-              <input
-                type="email"
-                className="rounded bg-input font-poppins p-2 text-black text-sm outline-none"
-                name="Email"
-                placeholder="Your Email *"
-              />
-              <input
-                type="tel"
-                className="rounded bg-input font-poppins p-2 text-black text-sm outline-none col-span-2 lg:col-span-1"
-                name="Name"
-                placeholder="Your Phone *"
-              />
+              <div className="col-span-1">
+                <input
+                  type="text"
+                  className="rounded bg-input font-poppins p-2 text-black text-sm outline-none w-full"
+                  placeholder="Your Name *"
+                  {...register("name", { required: "Name is required" })}
+                />
+                {errors.name && (
+                  <span className="text-red-500 text-xs">{errors.name.message}</span>
+                )}
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  className="rounded bg-input font-poppins p-2 text-black text-sm outline-none w-full"
+                  placeholder="Your Email *"
+                  {...register("email", {
+                    required: "Email is required",
+                    pattern: {
+                      value: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                      message: "Please enter a valid email",
+                    },
+                  })}
+                />
+                {errors.email && (
+                  <span className="text-red-500 text-xs">{errors.email.message}</span>
+                )}
+              </div>
+
+              <div className="col-span-2 lg:col-span-1">
+                <input
+                  type="tel"
+                  className="rounded bg-input font-poppins p-2 text-black text-sm outline-none w-full"
+                  placeholder="Your Phone *"
+                  {...register("phone", { required: "Phone number is required" })}
+                />
+                {errors.phone && (
+                  <span className="text-red-500 text-xs">{errors.phone.message}</span>
+                )}
+              </div>
             </div>
-            <textarea
-              type="text"
-              className="rounded w-full bg-input font-poppins p-2 text-black text-sm outline-none min-h-[207px] max-h-[207px] "
-              name="Name"
-              placeholder="Your Message *"
-            />
+
+            <div>
+              <textarea
+                className="rounded w-full bg-input font-poppins p-2 text-black text-sm outline-none min-h-[207px] max-h-[207px]"
+                placeholder="Your Message *"
+                {...register("message", { required: "Message is required" })}
+              />
+              {errors.message && (
+                <span className="text-red-500 text-xs">{errors.message.message}</span>
+              )}
+            </div>
+
             <div className="flex justify-end w-full">
-            <button type="submit" className="w-full lg:max-w-[30%]  bg-textsecondary1 text-white font-medium font-poppins p-2 rounded">
-              Send Message
-            </button>
+              <button
+                type="submit"
+                className="w-full lg:max-w-[30%] bg-textsecondary1 hover:bg-hover transition-colors duration-300 ease-in-out text-white font-medium font-poppins p-2 rounded"
+              >
+                Send Message
+              </button>
             </div>
           </form>
         </div>
@@ -76,4 +124,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;

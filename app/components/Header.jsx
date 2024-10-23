@@ -53,7 +53,7 @@ const Header = () => {
           <input
             type="text"
             name="search"
-            className="min-w-[243px] max-w-[243px] h-[38px] rounded px-3 text-[12px] border-0 bg-[#F5F5F5] text-black font-poppins"
+            className="min-w-[243px] outline-none max-w-[243px] h-[38px] rounded px-3 text-[12px] border-0 bg-[#F5F5F5] text-black font-poppins"
             placeholder="What are you looking for?"
           />
           <span className="absolute font-bold top-2 right-4">
