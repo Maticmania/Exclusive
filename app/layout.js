@@ -7,6 +7,7 @@ const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
   style: ["normal", "italic"],
+  preload: true,
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Set your desired font weight here. The default is 400.
 });
 
@@ -14,12 +15,14 @@ const inter = Inter({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--inter",
-  weight: ["400", "500", "600", "700", "800", "900"], // Set your desired font weight here. The default is 400.
+  preload: true,
+  // weight: ["400", "500", "600", "700", "800", "900"], // Set your desired font weight here. The default is 400.
 });
 const k2d = K2D({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--k2d",
+  preload: true,
   weight: ["400", "500", "600", "700", "800"],
 });
 

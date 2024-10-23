@@ -16,12 +16,14 @@ module.exports = {
         button1: "#00FF66",
         button2: "#DB4444",
         hover: "#E07575",
-        shadow: "0 1 13px rgba(0, 0, 0, 0.5)",
+        input: '#F5F5F5',
       },
       fontFamily: {
         poppins: ["var(--poppins)"],
         inter: ["var(--inter)"],
         k2d: ["var(--k2d)"],
+      }, boxShadow: {
+        'custom-light': '0px 1px 13px 0px rgba(0, 0, 0, 0.05)',
       },
     },
   },
