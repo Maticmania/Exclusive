@@ -1,7 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import phoneIcon from "@/assets/icons/icons-phone.svg";
 import mailIcon from "@/assets/icons/icons-mail.svg";
 import { contact } from "../db/page";
@@ -18,9 +18,8 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full px-[5%] grid gap-8">
+    (<div className="w-full px-[5%] grid gap-8">
       <p className="font-poppins pt-10">Home / Contact</p>
-
       <div className="flex flex-col md:flex-row w-full gap-5 h-full md:max-h-[457px]">
         {contact.map((contact, i) => (
           <div
@@ -120,7 +119,7 @@ const Page = () => {
           </form>
         </div>
       </div>
-    </div>
+    </div>)
   );
 };
 

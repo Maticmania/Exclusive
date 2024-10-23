@@ -123,3 +123,24 @@ export const team =[
         linkedin: 'https://www.linkedin.com'
     }
 ]
+import delivery from '@/assets/icons/delivery.svg'
+import support from '@/assets/icons/support.svg'
+import money from '@/assets/icons/money.svg'
+
+export const offers =[
+{
+    icon: delivery,
+    title: "FREE AND FAST DELIVERY",
+    text: "Free delivery for all orders over $140"
+},
+{
+    icon: support,
+    title: "24/7 CUSTOMER SERVICE",
+    text: "Friendly 24/7 customer support"
+},
+{
+    icon: money,
+    title: "MONEY BACK GUARANTEE",
+    text: "We reurn money within 30 days"
+}
+]

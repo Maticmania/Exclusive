@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import authImage from "@/assets/images/authImage.svg";
 import Link from "next/link";
 import { BiError } from "react-icons/bi";
@@ -20,7 +20,7 @@ const Page = () => {
   };
 
   return (
-    <div className="w-full h-full flex flex-col lg:flex-row-reverse lg:min-h-[700px] cursor-grab">
+    (<div className="w-full h-full flex flex-col lg:flex-row-reverse lg:min-h-[700px] cursor-grab">
       {/* left image */}
       <div className="w-full lg:w-1/2 h-[200px] lg:h-full">
         <Image
@@ -108,7 +108,7 @@ const Page = () => {
           </form>
         </div>
       </div>
-    </div>
+    </div>)
   );
 };
 
