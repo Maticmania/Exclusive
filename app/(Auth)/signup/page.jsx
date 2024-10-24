@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import googleIcon from "@/assets/icons/icon-google.svg";
 import authImage from "@/assets/images/authImage.svg";
 import Link from "next/link";
@@ -53,7 +53,10 @@ const Page = () => {
           src={authImage}
           alt="auth image"
           className="w-full h-full lg:h-[700px] object-cover"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
       {/* right content */}
       <div className="w-full lg:w-1/2 h-full lg:px-10 lg:min-h-[700px] flex justify-center py-6">
@@ -137,7 +140,13 @@ const Page = () => {
                 Create an Account
               </button>
               <button className="h-[56px] w-full border-black/40 border rounded flex justify-center items-center gap-4 font-poppins text-black">
-                <Image src={googleIcon} alt="googleIcon" />
+                <Image
+                  src={googleIcon}
+                  alt="googleIcon"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
                 Sign up with Google
               </button>
             </div>

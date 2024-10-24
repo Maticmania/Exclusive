@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import AboutImage from '@/assets/images/AboutImage.svg'
 import Insight from "../components/About/Insight";
 import Team from "../components/About/Team";
@@ -7,7 +7,7 @@ import Offers from "../components/About/Offers";
 const Page = () => {
 
   return (
-    <div className="w-full px-[5%] grid gap-8">
+    (<div className="w-full px-[5%] grid gap-8">
       <p className="font-poppins pt-10">Home / About</p>
       <div className="Hero flex flex-col lg:flex-row w-full items-center justify-center gap-5 lg:gap-14 2xl:justify-between">
       <div className="w-full lg:w-1/2 xl:max-w-[527px] 2xl:max-w-full space-y-5 xl:space-y-8">
@@ -16,13 +16,19 @@ const Page = () => {
         <p className="font-poppins font-normal text-sm sm:text-base">Exclusive has more than 1 Million products to offer, growing at a very fast. Exclusive offers a diverse assotment in categories ranging from consumer.</p>
       </div>
       <div className="">
-        <Image src={AboutImage} alt="About Exclusive"  />
+        <Image
+          src={AboutImage}
+          alt="About Exclusive"
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
       </div>
       <Insight/>
       <Team/>
       <Offers/>
-    </div>
+    </div>)
   );
 };
 

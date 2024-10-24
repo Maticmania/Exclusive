@@ -1,9 +1,9 @@
 import { offers } from "@/app/db/page";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const Offers = () => {
   return (
-    <div className="px-4 py-10 sm:px-6 lg:px-8">
+    (<div className="px-4 py-10 sm:px-6 lg:px-8">
       <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 ">
         {offers.map((offer, i) => (
           <div 
@@ -11,12 +11,14 @@ const Offers = () => {
             key={i}
           >
             <div className="relative w-16 h-16 sm:w-20 sm:h-20">
-              <Image 
-                src={offer.icon} 
+              <Image
+                src={offer.icon}
                 alt={offer.title}
-                layout="fill"
-                objectFit="contain"
-              />
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "contain"
+                }} />
             </div>
             <span className="grid gap-2">
               <p className="font-poppins text-lg sm:text-xl font-semibold">
@@ -29,7 +31,7 @@ const Offers = () => {
           </div>
         ))}
       </div>
-    </div>
+    </div>)
   );
 };
 

@@ -1,7 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import phoneIcon from "@/assets/icons/icons-phone.svg";
 import mailIcon from "@/assets/icons/icons-mail.svg";
 import { contact } from "../db/page";
@@ -28,7 +28,13 @@ const Page = () => {
           >
             <div className="font-poppins grid gap-4 text-center md:text-left">
               <div className="flex items-center gap-3 w-full justify-center md:justify-start">
-                <Image src={phoneIcon} alt="phone" />
+                <Image
+                  src={phoneIcon}
+                  alt="phone"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
                 <span className="font-medium font-poppins">Call To us</span>
               </div>
               <p className="text-[12px] sm:text-sm">
@@ -39,7 +45,13 @@ const Page = () => {
             <span className="bg-gray-400 w-full h-[1px]"></span>
             <div className="grid gap-4 text-center md:text-left font-poppins">
               <div className="flex items-center gap-3 w-full justify-center md:justify-start">
-                <Image src={mailIcon} alt="mail" />
+                <Image
+                  src={mailIcon}
+                  alt="mail"
+                  style={{
+                    maxWidth: "100%",
+                    height: "auto"
+                  }} />
                 <span className="font-medium font-poppins">Write To Us</span>
               </div>
               <p className="text-sm">

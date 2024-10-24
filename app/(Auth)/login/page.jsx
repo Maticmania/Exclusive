@@ -1,7 +1,7 @@
 "use client";
 import { useState, useEffect } from "react";
 import { useForm } from "react-hook-form";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import authImage from "@/assets/images/authImage.svg";
 import Link from "next/link";
 import { BiError } from "react-icons/bi";
@@ -27,7 +27,10 @@ const Page = () => {
           src={authImage}
           alt="auth image"
           className="w-full h-full lg:h-[700px] object-cover"
-        />
+          style={{
+            maxWidth: "100%",
+            height: "auto"
+          }} />
       </div>
       {/* right content */}
       <div className="w-full lg:w-1/2 h-full lg:px-10 lg:min-h-[700px] flex justify-center py-6">

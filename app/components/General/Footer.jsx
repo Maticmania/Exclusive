@@ -1,12 +1,12 @@
 import React from 'react'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import qrcode from '@/assets/images/qrcode.svg'
 import googleplay from '@/assets/images/googleplay.svg'
 import appleStore from '@/assets/images/AppStore.svg'
 export default function Footer() {
   return (
-    <footer className="bg-black text-white py-12 px-[5%] ">
+    (<footer className="bg-black text-white py-12 px-[5%] ">
       <div className="mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
         <div className="col-span-1 lg:col-span-1">
           <h2 className="text-2xl font-bold mb-4 font-inter">Exclusive</h2>
@@ -60,11 +60,34 @@ export default function Footer() {
           <p className="mb-2 text-[#FAFAFA]">Save $3 with App New User Only</p>
           <div className="flex space-x-4 mb-4">
             <div className="w-24 h-24 relative">
-              <Image src={qrcode} alt="QR Code" layout="fill" objectFit="contain" />
+              <Image
+                src={qrcode}
+                alt="QR Code"
+                fill
+                sizes="100vw"
+                style={{
+                  objectFit: "contain"
+                }} />
             </div>
             <div className="flex flex-col space-y-2">
-              <Image src={googleplay} alt="Google Play" width={120} height={40} />
-              <Image src={appleStore} alt="App Store" width={120} height={40} />
+              <Image
+                src={googleplay}
+                alt="Google Play"
+                width={120}
+                height={40}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
+              <Image
+                src={appleStore}
+                alt="App Store"
+                width={120}
+                height={40}
+                style={{
+                  maxWidth: "100%",
+                  height: "auto"
+                }} />
             </div>
           </div>
           <div className="flex justify-between px-4 lg:px-0">
@@ -78,6 +101,6 @@ export default function Footer() {
       <div className="mt-12 text-center">
         <p>&copy; Copyright Rimel 2022. All right reserved</p>
       </div>
-    </footer>
-  )
+    </footer>)
+  );
 }
