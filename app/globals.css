@@ -4,3 +4,40 @@
 
 @import "slick-carousel/slick/slick.css";
 @import "slick-carousel/slick/slick-theme.css";
+
+
+  /* height: 30px; Adjust based on label size */
+  
+  input[type="checkbox"] {
+    appearance: none;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid hsla(0, 0%, 90%, 1);
+    border-radius: 5px;
+    position: relative;
+    cursor: pointer;
+    vertical-align: bottom;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  
+  /* Style when checkbox is checked */
+  input[type="checkbox"]:checked #saveInfo {
+    background: #DB4444; /* Darker background when checked */
+  }
+  
+  /* Style for the checkmark */
+  input[type="checkbox"]:checked::after  {
+    content: "✔";
+    color: white; /* White checkmark color */
+    font-size: 16px; /* Adjust size of checkmark */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+

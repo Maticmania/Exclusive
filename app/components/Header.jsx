@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { usePathname } from 'next/navigation'
@@ -30,7 +30,7 @@ const Header = () => {
   
 
   return (
-    (<div className="h-[80px] border-b-[0.005rem] border-black/30 w-full px-[5%] flex justify-between items-center">
+    <div className="h-[80px] border-b-[0.005rem] border-black/30 w-full px-[5%] flex justify-between items-center">
       <Link href="/">
         <h1 className="font-bold font-inter text-2xl">Exclusive</h1>
       </Link>
@@ -53,19 +53,11 @@ const Header = () => {
           <input
             type="text"
             name="search"
-            className="min-w-[243px] outline-none max-w-[243px] h-[38px] rounded px-3 text-[12px] border-0 bg-[#F5F5F5] text-black font-poppins"
+            className="min-w-[243px] max-w-[243px] h-[38px] rounded px-3 text-[12px] border-0 bg-[#F5F5F5] text-black font-poppins"
             placeholder="What are you looking for?"
           />
           <span className="absolute font-bold top-2 right-4">
-            <Image
-              src={searchicon}
-              alt="carticon"
-              style={{
-                maxWidth: "100%",
-                height: "auto",
-                maxWidth: "100%",
-                height: "auto"
-              }} />
+            <Image src={searchicon} alt="carticon" />
           </span>
         </label>
         <Link href="/wishlist">
@@ -73,31 +65,19 @@ const Header = () => {
             src={wishlist}
             className="hidden md:inline-flex"
             alt="wishlist"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+          />
         </Link>
         <Image
           src={searchicon}
           className="inline-flex lg:hidden"
           alt="carticon"
-          style={{
-            maxWidth: "100%",
-            height: "auto",
-            maxWidth: "100%",
-            height: "auto"
-          }} />
+        />
         <Link href="/cart">
-          <Image
-            src={cartIcon}
-            alt="carticon"
-             />
+          <Image src={cartIcon} alt="carticon" />
         </Link>
         <RxHamburgerMenu className="text-3xl inline-flex md:hidden" onClick={toggleModal} />
       </div>
+
       {/* Hamburger Modal */}
       {isModalOpen && (
         <div
@@ -125,7 +105,7 @@ const Header = () => {
           </div>
         </div>
       )}
-    </div>)
+    </div>
   );
 };
 
