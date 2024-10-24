@@ -98,30 +98,30 @@ export const team =[
         twitter: 'https://www.x.com/bigpicturematic',
         linkedin: 'https://www.linkedin.com'
     },
-    {
-        name: 'Emma Watson',
-        title: 'Product Designer',
-        image: emma,
-        insta: 'https://www.instgram.com/matic.dev',
-        twitter: 'https://www.x.com/bigpicturematic',
-        linkedin: 'https://www.linkedin.com'
-    },
-    {
-        name: 'Tom Cruise',
-        title: 'Lead Developer',
-        image: tom,
-        insta: 'https://www.instgram.com/matic.dev',
-        twitter: 'https://www.x.com/bigpicturematic',
-        linkedin: 'https://www.linkedin.com'
-    },
-    {
-        name: 'Mark Ruffalo',
-        title: 'QA & Testing',
-        image: mark,
-        insta: 'https://www.instgram.com/matic.dev',
-        twitter: 'https://www.x.com/bigpicturematic',
-        linkedin: 'https://www.linkedin.com'
-    }
+    // {
+    //     name: 'Emma Watson',
+    //     title: 'Product Designer',
+    //     image: emma,
+    //     insta: 'https://www.instgram.com/matic.dev',
+    //     twitter: 'https://www.x.com/bigpicturematic',
+    //     linkedin: 'https://www.linkedin.com'
+    // },
+    // {
+    //     name: 'Tom Cruise',
+    //     title: 'Lead Developer',
+    //     image: tom,
+    //     insta: 'https://www.instgram.com/matic.dev',
+    //     twitter: 'https://www.x.com/bigpicturematic',
+    //     linkedin: 'https://www.linkedin.com'
+    // },
+    // {
+    //     name: 'Mark Ruffalo',
+    //     title: 'QA & Testing',
+    //     image: mark,
+    //     insta: 'https://www.instgram.com/matic.dev',
+    //     twitter: 'https://www.x.com/bigpicturematic',
+    //     linkedin: 'https://www.linkedin.com'
+    // }
 ]
 import delivery from '@/assets/icons/delivery.svg'
 import support from '@/assets/icons/support.svg'

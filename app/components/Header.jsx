@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { usePathname } from 'next/navigation'
@@ -94,12 +94,7 @@ const Header = () => {
           <Image
             src={cartIcon}
             alt="carticon"
-            style={{
-              maxWidth: "100%",
-              height: "auto",
-              maxWidth: "100%",
-              height: "auto"
-            }} />
+             />
         </Link>
         <RxHamburgerMenu className="text-3xl inline-flex md:hidden" onClick={toggleModal} />
       </div>
