@@ -21,7 +21,7 @@ export default function Loading() {
           width="100"
           height="100"
           viewBox="0 0 24 24"
-          className="text-white"
+          className="text-black"
         >
           <g
             fill="none"
@@ -62,7 +62,7 @@ export default function Loading() {
         </svg>
       </motion.div>
       <motion.p
-        className="mt-4 text-xl font-semibold text-white"
+        className="mt-4 text-xl font-semibold text-black"
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 1, delay: 0.5 }}

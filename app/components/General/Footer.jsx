@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from "next/legacy/image"
+import Image from "next/image"
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import qrcode from '@/assets/images/qrcode.svg'
 import googleplay from '@/assets/images/googleplay.svg'
@@ -63,10 +63,12 @@ export default function Footer() {
               <Image
                 src={qrcode}
                 alt="QR Code"
-                fill
+                // fill
                 sizes="100vw"
                 style={{
-                  objectFit: "contain"
+                  objectFit: "contain",
+                  maxWidth: "100%",
+                  height: "auto"
                 }} />
             </div>
             <div className="flex flex-col space-y-2">
@@ -77,6 +79,8 @@ export default function Footer() {
                 height={40}
                 style={{
                   maxWidth: "100%",
+                  height: "auto",
+                  maxWidth: "100%",
                   height: "auto"
                 }} />
               <Image
@@ -85,6 +89,8 @@ export default function Footer() {
                 width={120}
                 height={40}
                 style={{
+                  maxWidth: "100%",
+                  height: "auto",
                   maxWidth: "100%",
                   height: "auto"
                 }} />

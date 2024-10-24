@@ -3,6 +3,9 @@ import "./globals.css";
 import Header from "./components/Header";
 import Topheader from "./components/topheader";
 import Footer from "./components/General/Footer";
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 const poppins = Poppins({
   subsets: ["latin"],

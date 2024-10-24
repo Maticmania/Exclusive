@@ -1,62 +1,63 @@
 'use client'
 
-import { useState, useEffect, useCallback } from 'react'
-import Image from "next/legacy/image"
+import { useState, useRef, useEffect } from 'react'
+import Image from "next/image"
 import { team } from "@/app/db/page"
 import { CiTwitter } from "react-icons/ci"
 import { IoLogoInstagram } from "react-icons/io"
 import { RiLinkedinLine } from "react-icons/ri"
-import Slider from "react-slick"
-import "slick-carousel/slick/slick.css"
-import "slick-carousel/slick/slick-theme.css"
+import { Swiper, SwiperSlide } from 'swiper/react'
+import { Navigation, Pagination, Autoplay } from 'swiper/modules'
+
+import 'swiper/css'
+import 'swiper/css/navigation'
+import 'swiper/css/pagination'
 
 export default function Team() {
   const [currentSlide, setCurrentSlide] = useState(0)
-  const [sliderRef, setSliderRef] = useState(null)
-
-  const settings = {
-    dots: false,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 3,
-    slidesToScroll: 1,
-    autoplay: true,
-    autoplaySpeed: 3000,
-    pauseOnHover: true,
-    beforeChange: (current, next) => setCurrentSlide(next),
-    responsive: [
-      {
-        breakpoint: 1024,
-        settings: {
-          slidesToShow: 2,
-        }
-      },
-      {
-        breakpoint: 640,
-        settings: {
-          slidesToShow: 1,
-        }
-      }
-    ]
-  }
-
-  const goToSlide = useCallback((index) => {
-    sliderRef?.slickGoTo(index)
-  }, [sliderRef])
+  const swiperRef = useRef(null)
 
   useEffect(() => {
     const interval = setInterval(() => {
-      goToSlide((currentSlide + 1) % team.length)
+      if (swiperRef.current && swiperRef.current.swiper) {
+        swiperRef.current.swiper.slideNext()
+      }
     }, 5000)
 
     return () => clearInterval(interval)
-  }, [currentSlide, goToSlide])
+  }, [])
+
+  const goToSlide = (index) => {
+    if (swiperRef.current && swiperRef.current.swiper) {
+      swiperRef.current.swiper.slideTo(index)
+    }
+  }
 
   return (
     <div className="relative px-4 sm:px-6 lg:px-8">
-      <Slider ref={setSliderRef} {...settings}>
+      <Swiper
+        ref={swiperRef}
+        modules={[Navigation, Pagination, Autoplay]}
+        spaceBetween={30}
+        slidesPerView={1}
+        navigation
+        pagination={{ clickable: true }}
+        autoplay={{ delay: 5000, disableOnInteraction: false }}
+        breakpoints={{
+          640: {
+            slidesPerView: 1,
+          },
+          768: {
+            slidesPerView: 2,
+          },
+          1024: {
+            slidesPerView: 3,
+          },
+        }}
+        onSlideChange={(swiper) => setCurrentSlide(swiper.activeIndex)}
+      >
         {team.map((member, i) => (
-          <div key={i} className="px-2">
+          <SwiperSlide key={i}>
             <div className="flex flex-col items-center text-center">
               <div className="relative w-full aspect-square mb-4">
                 <Image
@@ -81,9 +82,9 @@ export default function Team() {
                 </a>
               </ul>
             </div>
-          </div>
+          </SwiperSlide>
         ))}
-      </Slider>
+      </Swiper>
       <div className="flex justify-center mt-6">
         {team.map((_, index) => (
           <button

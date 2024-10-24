@@ -1,7 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import phoneIcon from "@/assets/icons/icons-phone.svg";
 import mailIcon from "@/assets/icons/icons-mail.svg";
 import { contact } from "../db/page";
@@ -33,6 +33,8 @@ const Page = () => {
                   alt="phone"
                   style={{
                     maxWidth: "100%",
+                    height: "auto",
+                    maxWidth: "100%",
                     height: "auto"
                   }} />
                 <span className="font-medium font-poppins">Call To us</span>
@@ -49,6 +51,8 @@ const Page = () => {
                   src={mailIcon}
                   alt="mail"
                   style={{
+                    maxWidth: "100%",
+                    height: "auto",
                     maxWidth: "100%",
                     height: "auto"
                   }} />

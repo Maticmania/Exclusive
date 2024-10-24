@@ -2,6 +2,5 @@
 @tailwind components;
 @tailwind utilities;
 
-.popping{
-    font-family: var(--poppins);
-}
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";

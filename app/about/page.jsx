@@ -1,4 +1,4 @@
-import Image from "next/legacy/image";
+import Image from "next/image";
 import AboutImage from '@/assets/images/AboutImage.svg'
 import Insight from "../components/About/Insight";
 import Team from "../components/About/Team";
@@ -20,6 +20,8 @@ const Page = () => {
           src={AboutImage}
           alt="About Exclusive"
           style={{
+            maxWidth: "100%",
+            height: "auto",
             maxWidth: "100%",
             height: "auto"
           }} />

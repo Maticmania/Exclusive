@@ -1,5 +1,5 @@
 import { offers } from "@/app/db/page";
-import Image from "next/legacy/image";
+import Image from "next/image";
 
 const Offers = () => {
   return (
@@ -14,10 +14,12 @@ const Offers = () => {
               <Image
                 src={offer.icon}
                 alt={offer.title}
-                fill
+                // fill
                 sizes="100vw"
                 style={{
-                  objectFit: "contain"
+                  objectFit: "contain",
+                  maxWidth: "100%",
+                  height: "auto"
                 }} />
             </div>
             <span className="grid gap-2">

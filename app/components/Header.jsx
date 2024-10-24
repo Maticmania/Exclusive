@@ -1,6 +1,6 @@
 "use client";
 import { useState } from "react";
-import Image from "next/legacy/image";
+import Image from "next/image";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { AiOutlineClose } from "react-icons/ai";
 import { usePathname } from 'next/navigation'
@@ -62,6 +62,8 @@ const Header = () => {
               alt="carticon"
               style={{
                 maxWidth: "100%",
+                height: "auto",
+                maxWidth: "100%",
                 height: "auto"
               }} />
           </span>
@@ -73,6 +75,8 @@ const Header = () => {
             alt="wishlist"
             style={{
               maxWidth: "100%",
+              height: "auto",
+              maxWidth: "100%",
               height: "auto"
             }} />
         </Link>
@@ -82,6 +86,8 @@ const Header = () => {
           alt="carticon"
           style={{
             maxWidth: "100%",
+            height: "auto",
+            maxWidth: "100%",
             height: "auto"
           }} />
         <Link href="/cart">
@@ -89,6 +95,8 @@ const Header = () => {
             src={cartIcon}
             alt="carticon"
             style={{
+              maxWidth: "100%",
+              height: "auto",
               maxWidth: "100%",
               height: "auto"
             }} />
