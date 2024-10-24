@@ -20,7 +20,7 @@ const Page = () => {
   return (
     (<div className="w-full px-[5%] grid gap-8">
       <p className="font-poppins pt-10">Home / Contact</p>
-      <div className="flex flex-col md:flex-row w-full gap-5 h-full md:max-h-[457px]">
+      <div className="flex flex-col md:flex-row w-full gap-5 h-full md:max-h-[457px] mb-28">
         {contact.map((contact, i) => (
           <div
             className="w-full lg:w-[30%] md:w-[40%] p-[5%] md:p-[3%] rounded shadow-custom-light flex flex-col gap-4 md:gap-8"
