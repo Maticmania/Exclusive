@@ -1,7 +1,7 @@
 "use client"
 
 import { useForm } from "react-hook-form";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import phoneIcon from "@/assets/icons/icons-phone.svg";
 import mailIcon from "@/assets/icons/icons-mail.svg";
 import { contact } from "../db/page";

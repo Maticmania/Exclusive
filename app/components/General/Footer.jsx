@@ -1,5 +1,5 @@
 import React from 'react'
-import Image from "next/image"
+import Image from "next/legacy/image"
 import { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn } from 'react-icons/fa'
 import qrcode from '@/assets/images/qrcode.svg'
 import googleplay from '@/assets/images/googleplay.svg'
