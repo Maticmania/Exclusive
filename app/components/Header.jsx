@@ -12,14 +12,12 @@ import Link from "next/link";
 const Header = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const pathname = usePathname()
-
+ 
   // Function to toggle the modal
   const toggleModal = () => {
     setIsModalOpen(!isModalOpen);
   };
 
-  // Helper function to determine if the link is active
-  const isActiveLink = (path) => console.log(path);
   
   // Close modal when clicking outside
   const closeModalOnOutsideClick = (e) => {
@@ -60,8 +58,8 @@ const Header = () => {
             <Image src={searchicon} alt="carticon" />
           </span>
         </label>
-        <Link href="/wishlist">
-          <Image
+        <Link href="/wishlist" className={`${pathname === '/login' || pathname === '/signup' ? "hidden" : "flex"}`}>
+        <Image
             src={wishlist}
             className="hidden md:inline-flex"
             alt="wishlist"
@@ -72,8 +70,8 @@ const Header = () => {
           className="inline-flex lg:hidden"
           alt="carticon"
         />
-        <Link href="/cart">
-          <Image src={cartIcon} alt="carticon" />
+        <Link href="/cart" className={`${pathname === '/login' || pathname === '/signup' ? "hidden" : "flex"}`}>
+        <Image src={cartIcon} alt="carticon" />
         </Link>
         <RxHamburgerMenu className="text-3xl inline-flex md:hidden" onClick={toggleModal} />
       </div>

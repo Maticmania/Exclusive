@@ -15,12 +15,7 @@ const Offers = () => {
                 src={offer.icon}
                 alt={offer.title}
                 // fill
-                sizes="100vw"
-                style={{
-                  objectFit: "contain",
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                />
             </div>
             <span className="grid gap-2">
               <p className="font-poppins text-lg sm:text-xl font-semibold">

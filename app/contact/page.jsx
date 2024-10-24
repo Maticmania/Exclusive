@@ -31,12 +31,7 @@ const Page = () => {
                 <Image
                   src={phoneIcon}
                   alt="phone"
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                    maxWidth: "100%",
-                    height: "auto"
-                  }} />
+                  />
                 <span className="font-medium font-poppins">Call To us</span>
               </div>
               <p className="text-[12px] sm:text-sm">
@@ -50,12 +45,7 @@ const Page = () => {
                 <Image
                   src={mailIcon}
                   alt="mail"
-                  style={{
-                    maxWidth: "100%",
-                    height: "auto",
-                    maxWidth: "100%",
-                    height: "auto"
-                  }} />
+                 />
                 <span className="font-medium font-poppins">Write To Us</span>
               </div>
               <p className="text-sm">

@@ -69,10 +69,7 @@ export default function Team() {
                   alt={member.name}
                   className="rounded-lg"
                   fill
-                  sizes="100vw"
-                  style={{
-                    objectFit: "cover",
-                  }}
+                  
                 />
               </div>
               <h2 className="font-inter text-2xl sm:text-3xl font-medium mb-2">

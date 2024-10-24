@@ -63,13 +63,9 @@ export default function Footer() {
               <Image
                 src={qrcode}
                 alt="QR Code"
-                // fill
                 sizes="100vw"
-                style={{
-                  objectFit: "contain",
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                priority
+                />
             </div>
             <div className="flex flex-col space-y-2">
               <Image
@@ -77,23 +73,13 @@ export default function Footer() {
                 alt="Google Play"
                 width={120}
                 height={40}
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                 />
               <Image
                 src={appleStore}
                 alt="App Store"
                 width={120}
                 height={40}
-                style={{
-                  maxWidth: "100%",
-                  height: "auto",
-                  maxWidth: "100%",
-                  height: "auto"
-                }} />
+                 />
             </div>
           </div>
           <div className="flex justify-between px-4 lg:px-0">

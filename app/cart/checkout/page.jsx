@@ -5,7 +5,7 @@ import monitor from  '@/assets/images/monitor.svg';
 import cardImage from  '@/assets/images/bankCard.svg';
 import Image from "next/image";
 
-const CheckoutPage = () => {
+const Page = () => {
   const {
     register,
     handleSubmit,
@@ -216,7 +216,7 @@ const CheckoutPage = () => {
                 <Image src={cardImage} alt="bank card image" className="hidden lg:inline-flex" />
               </div>
             </div>
-            <div className="mt-6 flex">
+            <div className="mt-6 flex gap-4">
               <input
                 type="text"
                 placeholder="Coupon Code"
@@ -239,4 +239,4 @@ const CheckoutPage = () => {
   );
 };
 
-export default CheckoutPage;
+export default Page;
