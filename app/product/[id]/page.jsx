@@ -1,10 +1,28 @@
-import React from 'react'
+'use client'
+
+import React, { useState, useEffect } from 'react'
 import { Star, Heart, Truck, RotateCcw } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import ProductGrid from '@/app/components/product/ProductGrid'
+import { ProductSkeleton } from '@/app/components/product/ProductDetailSkeleton'
 
 export default function Component({ id = 'HV G-92' }) {
+  const [isLoading, setIsLoading] = useState(true)
+
+  useEffect(() => {
+    // Simulate loading delay
+    const timer = setTimeout(() => {
+      setIsLoading(false)
+    }, 2000)
+
+    return () => clearTimeout(timer)
+  }, [])
+
+  if (isLoading) {
+    return <ProductSkeleton />
+  }
+
   return (
     <div className="w-full px-[5%] grid gap-20 min-h-[500px] py-10 font-inter">
       <p className="font-poppins text-base md:text-lg text-gray-500">Account / Gaming / IPS LCD Gaming Monitor</p>
@@ -43,7 +61,7 @@ export default function Component({ id = 'HV G-92' }) {
           </div>
           <p className="text-2xl font-bold font-poppins">$192.00</p>
           <p className="text-gray-600 font-poppins text-sm">PlayStation 5 Controller Skin High quality vinyl with air channel adhesive for easy bubble free install & mess free removal Pressure sensitive.</p>
-          <div className="space-y-4">
+          <div className="space-y-4 border-t pt-4">
             <div className='flex items-center gap-2'>
               <p className="font-semibold font-poppins">Colours:</p>
               <div className="flex space-x-2">
