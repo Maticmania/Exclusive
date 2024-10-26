@@ -7,8 +7,8 @@ import Offers from "../components/About/Offers";
 const Page = () => {
 
   return (
-    (<div className="w-full px-[5%] grid gap-8">
-      <p className="font-poppins pt-10">Home / About</p>
+    (<div className="w-full px-[5%] grid gap-8 py-10">
+      <p className="font-poppins">Home / About</p>
       <div className="Hero flex flex-col lg:flex-row w-full items-center justify-center gap-5 lg:gap-14 2xl:justify-between">
       <div className="w-full lg:w-1/2 xl:max-w-[527px] 2xl:max-w-full space-y-5 xl:space-y-8">
         <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-inter font-semibold">Our Story</h1>
