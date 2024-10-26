@@ -1,7 +1,7 @@
 import { Poppins, Inter, K2D } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Topheader from "./components/topheader";
+import Header from "./components/General/Header";
+import Topheader from "./components/General/topheader";
 import Footer from "./components/General/Footer";
 import 'swiper/css'
 import 'swiper/css/navigation'
