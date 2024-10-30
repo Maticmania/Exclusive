@@ -9,11 +9,11 @@ const Featured = () => {
   return (
     <section className='py-8 space-y-6'>
       <div className="flex items-center gap-2">
-        <span className="h-8 w-1 sm:w-2 bg-bgsecondary rounded" aria-hidden="true"></span>
-        <p className="font-poppins font-semibold text-sm sm:text-base md:text-lg text-bgsecondary">Featured</p>
+      <span className="h-10 w-5 bg-bgsecondary rounded" aria-hidden="true"></span>
+      <p className="font-poppins font-semibold text-sm sm:text-base  text-bgsecondary">Featured</p>
       </div>
       <h1 className='font-inter font-semibold text-2xl sm:text-3xl md:text-4xl'>New Arrival</h1>
-      <div className="grid gap-5 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4  md:min-h-[600px]">
+      <div className="grid gap-5 grid-cols-2 sm:grid-cols-2 lg:grid-cols-4  md:min-h-[600px] ">
         {/* Large Item */}
         <div className="col-span-1 min-h-[300px] sm:col-span-2 lg:row-span-2">
           <div className="relative h-full rounded bg-black overflow-hidden">

@@ -144,3 +144,35 @@ export const offers =[
     text: "We reurn money within 30 days"
 }
 ]
+import { Smartphone,Gamepad,Headphones,Camera,Laptop,Watch} from 'lucide-react'
+
+export const categoriesList =[
+    {
+        name: "Phones",
+        icon: <Smartphone size={56} strokeWidth={1.25}  />
+    },
+    {
+        name: "Computers",
+        icon: <Laptop size={56} strokeWidth={1.25}  />
+    },
+    {
+        name: "SmartWatch",
+        icon: <Watch size={56} strokeWidth={1.25}  />
+    },
+    {
+        name: "Camera",
+        icon: <Camera size={56} strokeWidth={1.25}  />
+    },
+    {
+        name: "HeadPhones",
+        icon: <Headphones size={56} strokeWidth={1.25}  />
+    },
+    {
+        name: "Gaming",
+        icon: <Smartphone size={56} strokeWidth={1.25}  />
+    },
+    {
+        name: "Gaming",
+        icon: <Gamepad size={56} strokeWidth={1.25}  />
+    },
+]
