@@ -9,7 +9,7 @@ import TopSales from "./components/Home/TopSales";
 
 const page = () => {
   return (
-    <div className="min-h-screen px-[5%] gap-10 grid">
+    <div className="min-h-screen px-[5%] gap-16  md:gap-20 grid">
       <CaroselHome/>
       <FlashSales/>
       <Category />

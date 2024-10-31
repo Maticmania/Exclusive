@@ -17,7 +17,11 @@ const ProductGrid = ({ leftText = "Just For You", rightText, children, className
         )}
       </div>
       {children}
-      <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8 lg:justify-between">
+      {/* <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 lg:gap-8 lg:justify-between"> */}
+      <div className="flex gap-5 overflow-auto scrollbar-hide">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
