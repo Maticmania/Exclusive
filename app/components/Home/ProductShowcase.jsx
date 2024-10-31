@@ -35,7 +35,7 @@ export default function ProductShowcase() {
   }, []);
 
   return (
-    <div className="bg-gradient-to-r from-black to-gray-700 text-white flex items-center justify-between flex-col md:flex-row p-5 lg:p-10 rounded">
+    <div className="bg-gradient-to-r from-gray-900 to-black text-white flex items-center justify-between flex-col md:flex-row p-5 lg:p-10 rounded">
       <div className="space-y-4">
         <p className="text-green-400 font-semibold font-poppins">Categories</p>
         <h1 className="text-4xl lg:text-5xl font-semibold font-inter leading-10">
