@@ -1,7 +1,7 @@
 "use client"
 import React from "react"
 import Image from "next/image"
-import monitor from  '@/assets/images/monitor.svg';
+import monitor from  '@/assets/images/Monitor.svg';
 import { Trash2, Heart, Star } from 'lucide-react'
 import { usePathname } from 'next/navigation'
 

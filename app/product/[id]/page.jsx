@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button"
 import Link from 'next/link'
 import ProductGrid from '@/app/components/product/ProductGrid'
 import { ProductSkeleton } from '@/app/components/product/ProductDetailSkeleton'
+import Image from 'next/image'
+import monitor from "@/assets/images/Monitor.svg"
 
 export default function Component({ id = 'HV G-92' }) {
   const [isLoading, setIsLoading] = useState(true)
@@ -29,19 +31,19 @@ export default function Component({ id = 'HV G-92' }) {
       <div className="grid lg:grid-cols-2 gap-8">
         <div className="space-y-4 md:flex lg:flex-col md:space-y-0  xl:space-y-0 xl:flex xl:flex-row-reverse flex-row-reverse gap-4">
           <div className="aspect-square md:w-[85%] lg:w-full bg-gray-100 rounded-lg overflow-hidden">
-            <img
-              src="/placeholder.svg?height=400&width=400"
-              alt="Havic HV G-92 Gamepad"
-              className="w-full h-full object-cover"
+            <Image
+                  src={monitor}
+                  alt="Havic HV G-92 Gamepad"
+              className="w-full h-full object-contain"
             />
           </div>
           <div className="grid md:grid-cols-1 lg:grid-cols-4 grid-cols-4 xl:grid-cols-1 gap-4">
             {[...Array(4)].map((_, i) => (
               <div key={i} className="aspect-square bg-gray-100 rounded-lg overflow-hidden">
-                <img
-                  src="/placeholder.svg?height=100&width=100"
+                <Image
+                  src={monitor}
                   alt={`Thumbnail ${i + 1}`}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-contain"
                 />
               </div>
             ))}
