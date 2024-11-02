@@ -45,7 +45,7 @@ const Featured = () => {
               aria-hidden="true"
             />
             <div className="absolute bottom-4 left-4 text-white space-y-2">
-              <h2 className="text-xl sm:text-2xl font-semibold font-inter">Women's Collections</h2>
+              <h2 className="text-xl sm:text-2xl font-semibold font-inter">Women&apos;s Collections</h2>
               <p className='text-xs sm:text-sm font-poppins w-4/5'>Featured collections that give you another vibe.</p>
               <a href="#" className="inline-block text-white font-poppins font-medium underline">Shop Now</a>
             </div>
