@@ -8,7 +8,7 @@ import { usePathname } from 'next/navigation'
 const ProductCard = () => {
     const pathname = usePathname()
   return (
-    <div className="w-full max-w-[auto] xl:min-w-[270px] h-[322px] flex flex-col justify-between gap-2 mx-auto">
+    <div className="w-full max-w-[auto] sm:min-w-[200px] md:min-w-[200px] xl:min-w-[270px] h-[322px] flex flex-col justify-between gap-2 mx-auto">
       <div className="w-full bg-[#F5F5F5] h-[75%] flex flex-col justify-center items-center rounded group cursor-pointer transition-all duration-300 ease-in-out relative">
         <Image
           src={monitor}

@@ -39,9 +39,13 @@ export default function RootLayout({ children }) {
       <body
         className={` ${poppins.variable} ${inter.variable} ${k2d.variable}`}
       >
+        <div className="w-full fixed z-10 top-0" >
         <Topheader/>
         <Header />
+        </div>
+        <div className="mt-[140px]" >
         {children}
+        </div>
         <Footer/>
       </body>
     </html>

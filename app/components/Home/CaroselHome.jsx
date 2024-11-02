@@ -54,9 +54,9 @@ const CaroselHome = () => {
         {slides.map((slide, index) => (
           <div
             key={index}
-            className="min-w-full flex items-center justify-center bg-black text-white p-8"
+            className="min-w-full flex items-center justify-center bg-black lg:min-h-[400px] text-white p-8"
           >
-            <div className="flex flex-col md:flex-row items-center justify-between space-x-6">
+            <div className="flex flex-col md:flex-row items-center justify-evenly w-full space-x-6">
               <div className="space-y-4">
                 <div className="flex items-center space-x-2">
                   <span className="text-4xl font-semibold"><GrApple/></span>
@@ -68,7 +68,7 @@ const CaroselHome = () => {
                 </button>
               </div>
               <div className="mt-6 md:mt-0">
-                <Image src={slide.image} alt={slide.title} width={300} height={400} className="object-contain" />
+                <Image src={slide.image} alt={slide.title} className="object-contain" />
               </div>
             </div>
           </div>

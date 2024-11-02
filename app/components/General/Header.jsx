@@ -39,7 +39,7 @@ const Header = () => {
   }, [isModalOpen]);
 
   return (
-    <div className="h-[80px] border-b-[0.005rem] border-black/30 w-full px-[5%] flex justify-between items-center">
+    <div className="h-[80px] border-b-[0.005rem] border-black/30 w-full px-[5%] flex justify-between items-center bg-[#ffffff]">
       <Link href="/">
         <h1 className="font-bold font-inter text-2xl">Exclusive</h1>
       </Link>
