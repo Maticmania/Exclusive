@@ -1,12 +1,15 @@
 import { Poppins, Inter, K2D } from "next/font/google";
 import "./globals.css";
-import Header from "./components/Header";
-import Topheader from "./components/topheader";
+import Header from "./components/General/Header";
+import Topheader from "./components/General/topheader";
+import Footer from "./components/General/Footer";
+
 
 const poppins = Poppins({
   subsets: ["latin"],
   variable: "--poppins",
   style: ["normal", "italic"],
+  preload: true,
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"], // Set your desired font weight here. The default is 400.
 });
 
@@ -14,12 +17,14 @@ const inter = Inter({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--inter",
-  weight: ["400", "500", "600", "700", "800", "900"], // Set your desired font weight here. The default is 400.
+  preload: true,
+  // weight: ["400", "500", "600", "700", "800", "900"], // Set your desired font weight here. The default is 400.
 });
 const k2d = K2D({
   subsets: ["latin"],
   style: ["normal", "italic"],
   variable: "--k2d",
+  preload: true,
   weight: ["400", "500", "600", "700", "800"],
 });
 
@@ -34,9 +39,14 @@ export default function RootLayout({ children }) {
       <body
         className={` ${poppins.variable} ${inter.variable} ${k2d.variable}`}
       >
+        <div className="w-full fixed z-10 top-0" >
         <Topheader/>
         <Header />
+        </div>
+        <div className="mt-[140px]" >
         {children}
+        </div>
+        <Footer/>
       </body>
     </html>
   );
