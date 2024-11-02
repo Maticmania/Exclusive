@@ -1,4 +1,4 @@
-import { offers } from "@/app/db/page";
+import { offers } from "@/app/db/db";
 import Image from "next/legacy/image";
 
 const Offers = () => {
