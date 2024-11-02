@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { useSwipeable } from 'react-swipeable';
 import Image from "next/image";
-import iPhoneImage from '@/assets/images/iphone14.svg'; // Update the path accordingly
+import iPhoneImage from '@/assets/images/Iphone14.svg'; // Update the path accordingly
 import { GrApple } from "react-icons/gr";
 
 const slides = [

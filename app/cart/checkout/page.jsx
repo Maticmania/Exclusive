@@ -1,7 +1,7 @@
 "use client";
 
 import { useForm } from "react-hook-form";
-import monitor from  '@/assets/images/monitor.svg';
+import monitor from  '@/assets/images/Monitor.svg';
 import cardImage from  '@/assets/images/bankCard.svg';
 import Image from "next/image";
 
