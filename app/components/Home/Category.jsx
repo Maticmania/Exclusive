@@ -2,7 +2,7 @@
 
 import React, { useCallback, useEffect, useState } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
-import { categoriesList } from '@/app/db/page'
+import { categoriesList } from '@/app/db/db'
 import useEmblaCarousel from 'embla-carousel-react'
 
 const Category = () => {
