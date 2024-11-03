@@ -1,5 +1,5 @@
 "use client";
-import  {insight}  from "@/app/db/db";
+import  {insight}  from "@/db";
 import { useSpring, animated } from "react-spring";
 import { useState, useEffect } from "react";
 
